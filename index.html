@@ -199,6 +199,32 @@ section { padding: 80px 24px; }
 }
 
 
+
+/* ── ANIMATIONS ── */
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+.hero::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: inherit; background-size: cover; background-position: center;
+  animation: heroZoom 18s ease-in-out forwards;
+  z-index: 0;
+}
+.hero-content { z-index: 2 !important; }
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
 </style>
 </head>
 <body>
@@ -214,7 +240,7 @@ section { padding: 80px 24px; }
       <li><a href="services.html" onclick="document.querySelector('.nav-links').classList.remove('open')">Services</a></li>
       <li><a href="about.html" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
       <li><a href="contact.html" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
-      <li><a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Apply Now</a></li>
+      <li><a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Apply Now</a></li>
     </ul>
   </div>
 </nav>
@@ -235,12 +261,12 @@ section { padding: 80px 24px; }
 <!-- PROGRAMS OVERVIEW -->
 <section class="programs" id="programs">
   <div class="container">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Our Programs</h2>
-    <p class="section-subtitle">Our programs are designed to offer international medical graduates a comprehensive and immersive experience in the US healthcare system, with a focus on practical, hands-on training.</p>
+    <div class="section-label reveal">What We Offer</div>
+    <h2 class="section-title reveal">Our Programs</h2>
+    <p class="section-subtitle reveal">Our programs are designed to offer international medical graduates a comprehensive and immersive experience in the US healthcare system, with a focus on practical, hands-on training.</p>
 
     <div class="card-grid">
-      <div class="card">
+      <div class="card reveal reveal-delay-1">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
@@ -248,7 +274,7 @@ section { padding: 80px 24px; }
         <p>Experience firsthand how US healthcare operates by observing and participating in clinical workflows, learning critical decision-making from experienced physicians.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-2">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -256,7 +282,7 @@ section { padding: 80px 24px; }
         <p>Enhance essential clinical skills through hands-on training in patient care, diagnostics, and medical procedures, preparing you for US healthcare standards.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-3">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
@@ -270,12 +296,12 @@ section { padding: 80px 24px; }
 <!-- WHY CHOOSE US -->
 <section class="why" style="background:var(--gray-100);">
   <div class="container">
-    <div class="section-label">Why Choose Us</div>
-    <h2 class="section-title">What Sets Us Apart</h2>
-    <p class="section-subtitle">With a deep understanding of the challenges faced by international graduates, we support and empower each participant.</p>
+    <div class="section-label reveal">Why Choose Us</div>
+    <h2 class="section-title reveal">What Sets Us Apart</h2>
+    <p class="section-subtitle reveal">With a deep understanding of the challenges faced by international graduates, we support and empower each participant.</p>
 
     <div class="card-grid">
-      <div class="card">
+      <div class="card reveal reveal-delay-4">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
@@ -283,7 +309,7 @@ section { padding: 80px 24px; }
         <p>Benefit from Dr. Ann Kim's extensive experience and deep understanding of both international and US medical systems.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-5">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
@@ -291,7 +317,7 @@ section { padding: 80px 24px; }
         <p>Our programs provide a well-rounded experience, ensuring you are fully prepared for the challenges ahead in US healthcare practice.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-6">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
         </div>
@@ -305,24 +331,24 @@ section { padding: 80px 24px; }
 <!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="container">
-    <div class="section-label" style="text-align:center">Success Stories</div>
-    <h2 class="section-title" style="text-align:center">What Our Graduates Say</h2>
-    <p class="section-subtitle" style="text-align:center;max-width:900px;margin-left:auto;margin-right:auto;">Our graduates have gone on to secure residency positions at programs across the United States.</p>
+    <div class="section-label reveal" style="text-align:center">Success Stories</div>
+    <h2 class="section-title reveal" style="text-align:center">What Our Graduates Say</h2>
+    <p class="section-subtitle reveal" style="text-align:center;max-width:900px;margin-left:auto;margin-right:auto;">Our graduates have gone on to secure residency positions at programs across the United States.</p>
 
     <div class="testimonial-grid">
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-1">
         <blockquote>"During my 4-week internship, I gained valuable hands-on experience, including patient care, diagnostic tests, and consultations. Dr. Kim's guidance and passion made this experience pivotal for my future medical career in the US."</blockquote>
         <div class="author">Kate Seong, MD</div>
         <div class="detail">Accepted to NY Internal Medicine Residency Program 2021</div>
       </div>
 
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-2">
         <blockquote>"Working at Joy Internal was an incredible experience that provided hands-on exposure to comprehensive primary care. Dr. Kim was a fantastic mentor, and the staff made me feel like part of the family."</blockquote>
         <div class="author">Clinical Rotation Graduate</div>
         <div class="detail">Accepted to Neurology Program 2021</div>
       </div>
 
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-3">
         <blockquote>"My internship gave me valuable insight into the role of a primary care physician in the US. The experience was incredibly enriching and will greatly benefit my future career."</blockquote>
         <div class="author">Myungwoo Nam, MD</div>
         <div class="detail">Accepted to NY Internal Medicine Program 2021</div>
@@ -333,9 +359,9 @@ section { padding: 80px 24px; }
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Ready to Take the Next Step?</h2>
+  <h2 class="reveal">Ready to Take the Next Step?</h2>
   <p>Join our program and gain the hands-on experience, mentorship, and support you need to succeed.</p>
-  <a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary">Apply Now</a>
+  <a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply Now</a>
 </section>
 
 <footer class="footer">
@@ -343,5 +369,18 @@ section { padding: 80px 24px; }
   <p>Copyright &copy; 2026 | Clinical US. All Rights Reserved.</p>
 </footer>
 
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

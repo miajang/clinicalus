@@ -237,6 +237,32 @@ section { padding: 80px 24px; }
   .info-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ── ANIMATIONS ── */
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+.hero::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: inherit; background-size: cover; background-position: center;
+  animation: heroZoom 18s ease-in-out forwards;
+  z-index: 0;
+}
+.hero-content { z-index: 2 !important; }
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
 </style>
 </head>
 <body>
@@ -252,7 +278,7 @@ section { padding: 80px 24px; }
       <li><a href="services.html" class="active" onclick="document.querySelector('.nav-links').classList.remove('open')">Services</a></li>
       <li><a href="about.html" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
       <li><a href="contact.html" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
-      <li><a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Apply Now</a></li>
+      <li><a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Apply Now</a></li>
     </ul>
   </div>
 </nav>
@@ -269,12 +295,12 @@ section { padding: 80px 24px; }
 <!-- SERVICES DETAIL -->
 <section style="background:var(--white);">
   <div class="container">
-    <div class="section-label">Programs</div>
-    <h2 class="section-title">Clinical Rotation Programs</h2>
-    <p class="section-subtitle">Our clinical rotation programs are specifically designed for international medical graduates, offering the opportunity to gain essential clinical experience in the US healthcare system.</p>
+    <div class="section-label reveal">Programs</div>
+    <h2 class="section-title reveal">Clinical Rotation Programs</h2>
+    <p class="section-subtitle reveal">Our clinical rotation programs are specifically designed for international medical graduates, offering the opportunity to gain essential clinical experience in the US healthcare system.</p>
 
     <div class="card-grid">
-      <div class="card">
+      <div class="card reveal reveal-delay-1">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
@@ -282,7 +308,7 @@ section { padding: 80px 24px; }
         <p>Experience firsthand how US healthcare operates by observing and participating in clinical workflows, learning critical decision-making and patient management practices from experienced physicians.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-2">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -290,7 +316,7 @@ section { padding: 80px 24px; }
         <p>Enhance essential clinical skills through hands-on training in patient care, diagnostics, and medical procedures, ensuring you're well-prepared for US healthcare standards.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-3">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
@@ -298,7 +324,7 @@ section { padding: 80px 24px; }
         <p>Receive continuous feedback and evaluations to track your progress and readiness for the next steps in your medical career.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-4">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
@@ -306,7 +332,7 @@ section { padding: 80px 24px; }
         <p>Students who successfully complete the clinical rotation receive a letter of recommendation from the supervising physician, supporting residency and training applications.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-5">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 0 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
         </div>
@@ -314,7 +340,7 @@ section { padding: 80px 24px; }
         <p>Our 4-week clinical rotation includes clinical exposure, hands-on training, and expert mentorship for $800. The rotation fee is non-refundable once the period is confirmed.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal reveal-delay-6">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </div>
@@ -331,24 +357,24 @@ section { padding: 80px 24px; }
 <!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="container">
-    <div class="section-label" style="text-align:center">Success Stories</div>
-    <h2 class="section-title" style="text-align:center">From Our Graduates</h2>
-    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">Hear from past participants about their experience in our clinical rotation program.</p>
+    <div class="section-label reveal" style="text-align:center">Success Stories</div>
+    <h2 class="section-title reveal" style="text-align:center">From Our Graduates</h2>
+    <p class="section-subtitle reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Hear from past participants about their experience in our clinical rotation program.</p>
 
     <div class="testimonial-grid">
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-1">
         <blockquote>"Interning at Joy Internal Medicine was a valuable stepping stone in my medical journey. I gained crucial skills like taking vitals and performing ECGs, which helped me advance to become a medical assistant and now a graduate student aspiring to be a physician assistant."</blockquote>
         <div class="author">Program Graduate</div>
         <div class="detail">Accepted to Physician Assistant Program in Philadelphia (2018-2019)</div>
       </div>
 
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-2">
         <blockquote>"I chose Joy Internal Medicine for my elective to gain experience with Korean patients, and it exceeded my expectations. I was responsible for taking chief complaints, assisting Dr. Kim during consultations, administering vaccines, and checking vitals."</blockquote>
         <div class="author">Joseph Choi, MD</div>
         <div class="detail">Accepted to Pathology Residency 2020</div>
       </div>
 
-      <div class="testimonial">
+      <div class="testimonial reveal reveal-delay-3">
         <blockquote>"This experience was invaluable. I gained hands-on clinical experience, observed Dr. Kim's patient interactions, and learned about the US healthcare system. I'm grateful to Dr. Kim for providing such a comprehensive and rewarding opportunity."</blockquote>
         <div class="author">Hyundam Gu</div>
         <div class="detail">Clinical Rotation 2023</div>
@@ -359,9 +385,9 @@ section { padding: 80px 24px; }
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Ready to Start Your Journey?</h2>
+  <h2 class="reveal">Ready to Start Your Journey?</h2>
   <p>Take the first step toward a brighter future in medicine with our expert guidance.</p>
-  <a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary">Apply Now</a>
+  <a href="https://airtable.com/apppy3epZjyzpmW7C/pagQEWgxoRkK1ufFe/form" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply Now</a>
 </section>
 
 <footer class="footer">
@@ -369,5 +395,18 @@ section { padding: 80px 24px; }
   <p>Copyright &copy; 2026 | Clinical US. All Rights Reserved.</p>
 </footer>
 
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
